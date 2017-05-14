@@ -1,3 +1,5 @@
+#Creating teh cached matrix
+
 makeCacheMatrix <- function(x = matrix()) {
     inversed <- NULL
     set <- function(y) {
@@ -13,7 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
 #the function will inverse the original matrix
 
 cacheSolve <- function(x, ...) {
-    inversed <- x$getI()
+    inversed <- x$getI() #assign variable to inversed matrix
     # checking whether the matrix is already inverted
     if (is.null(inversed)==FALSE) {
         message("getting cached data")
@@ -22,5 +24,5 @@ cacheSolve <- function(x, ...) {
     matrixNew <- x$get()
     inversed <- solve(matrixNew, ...)
     x$setI(inversed)
-    inversed
+    inversed  #print out the result
 }
